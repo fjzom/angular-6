@@ -1,0 +1,27 @@
+ <h1>{{name}}</h1>
+<p>
+  Assigment: 1
+</p>
+
+<button (click)='flag=true'>View Courses list</button>
+<div *ngIf="flag">
+  <app-courses-list ></app-courses-list>
+</div>
+<p>
+  Assigment: 2
+</p>
+<div>
+  <app-product-list (onCalcTotalPrice)="eligibleDiscount($event)"></app-product-list>
+  <p [ngStyle]="{'color': 'green'}">{{message}}</p>
+</div>
+
+<p>
+  Assigment: 3
+</p>
+Select a category
+<select #option (change)="category = option.value">
+  <option value="romance">Romance</option>
+  <option value="mistery">Mistery</option>
+  <option value="detectives">Detectives</option>
+</select><br/>
+<app-books [dropDownBookByCategory]='category'></app-books>

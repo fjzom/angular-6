@@ -1,0 +1,12 @@
+<table border="1">
+  <tbody>
+    <tr *ngFor="let product of productArr"> 
+      <td><button (click)="removeRow(product.id)">Delete</button></td>
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td><input type="number"[(ngModel)]="product.quantity" (change)="calcTotalPrice(product.price, product.quantity)"></td>
+    </tr>
+  </tbody>
+</table>
+<p>The total price is: {{totalPrice}}</p>
